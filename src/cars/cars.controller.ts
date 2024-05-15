@@ -11,10 +11,9 @@ export class CarsController {
     return this.carsService.findAll();
   }
 
-  // @Get(':id')
-  // getCarById( @Param('id') id: string) {
-  //     console.log({ id });
-  //     return this.cars[id]
-
-  // }
+  @Get(':id')
+  getCarById(@Param('id') id: string) {
+    console.log({ id: +1 });
+    return this.carsService.findOneByid(+id);
+  }
 }
