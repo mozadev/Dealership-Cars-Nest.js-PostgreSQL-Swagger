@@ -14,7 +14,6 @@ export class CarsController {
   @Get(':id')
   getCarById(@Param('id', ParseIntPipe) id: number) {
     console.log({ id });
-    throw new Error('Not implemented');
     return this.carsService.findOneByid(id);
   }
 }
