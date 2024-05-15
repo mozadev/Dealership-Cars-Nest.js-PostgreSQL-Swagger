@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Param,
   ParseIntPipe,
@@ -33,5 +34,13 @@ export class CarsController {
   @Patch(':id')
   updateCar(@Body() body: any) {
     return body;
+  }
+
+  @Delete(':id')
+  deleteCar(@Param('id', ParseIntPipe) id: number) {
+    return {
+      method: 'delete',
+      id,
+    };
   }
 }
