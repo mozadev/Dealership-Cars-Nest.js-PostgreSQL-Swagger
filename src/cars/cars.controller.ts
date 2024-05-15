@@ -4,6 +4,7 @@ import {
   Get,
   Param,
   ParseIntPipe,
+  Patch,
   Post,
 } from '@nestjs/common';
 import { get } from 'http';
@@ -26,6 +27,11 @@ export class CarsController {
 
   @Post()
   createCar(@Body() body: any) {
+    return body;
+  }
+
+  @Patch()
+  updateCar(@Body() body: any) {
     return body;
   }
 }
