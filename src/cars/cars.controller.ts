@@ -1,4 +1,11 @@
-import { Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+} from '@nestjs/common';
 import { get } from 'http';
 import { CarsService } from './cars.service';
 
@@ -18,10 +25,7 @@ export class CarsController {
   }
 
   @Post()
-  createCar() {
-    return {
-      ok: true,
-      method: 'POST',
-    };
+  createCar(@Body() body: any) {
+    return body;
   }
 }
