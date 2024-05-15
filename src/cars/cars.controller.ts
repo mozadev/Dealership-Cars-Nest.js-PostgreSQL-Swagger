@@ -30,7 +30,7 @@ export class CarsController {
     return body;
   }
 
-  @Patch()
+  @Patch(':id')
   updateCar(@Body() body: any) {
     return body;
   }
