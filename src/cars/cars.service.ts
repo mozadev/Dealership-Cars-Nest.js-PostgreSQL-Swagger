@@ -7,19 +7,19 @@ import { v4 as uuid } from 'uuid';
 export class CarsService {
   private cars: Car[] = [
     {
-      id: 1,
+      id: uuid(),
       brand: 'Toyota',
       model: 'Corolla',
     },
 
     {
-      id: 2,
+      id: uuid(),
       brand: 'Ford',
       model: 'Fiesta',
     },
 
     {
-      id: 3,
+      id: uuid(),
       brand: 'BMW',
       model: 'M3',
     },
