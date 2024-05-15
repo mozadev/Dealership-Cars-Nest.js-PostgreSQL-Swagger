@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { get } from 'http';
 import { CarsService } from './cars.service';
 
@@ -12,8 +12,9 @@ export class CarsController {
   }
 
   @Get(':id')
-  getCarById(@Param('id') id: string) {
-    console.log({ id: +1 });
-    return this.carsService.findOneByid(+id);
+  getCarById(@Param('id', ParseIntPipe) id: number) {
+    console.log({ id });
+    throw new Error('Not implemented');
+    return this.carsService.findOneByid(id);
   }
 }
