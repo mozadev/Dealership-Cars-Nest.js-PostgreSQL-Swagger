@@ -16,7 +16,7 @@ import { CarsService } from './cars.service';
 import { CreateCarDto } from './dto/create-car.dto';
 
 @Controller('cars')
-@UsePipes(ValidationPipe) // validate Dtos, This pipe is used to validate the data that comes from the body of the request and the parameters of the request, apply the validation to all the methods in the controller
+// @UsePipes(ValidationPipe) // validate Dtos, This pipe is used to validate the data that comes from the body of the request and the parameters of the request, apply the validation to all the methods in the controller
 export class CarsController {
   constructor(private readonly carsService: CarsService) {}
 
