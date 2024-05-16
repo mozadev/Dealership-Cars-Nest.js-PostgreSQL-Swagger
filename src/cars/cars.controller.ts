@@ -27,7 +27,7 @@ export class CarsController {
 
   // @Get(':id/:status') if id isn't a uuid don't request database o  service
   @Get(':id')
-  getCarById(@Param('id', new ParseUUIDPipe({ version: '5' })) id: string) {
+  getCarById(@Param('id', new ParseUUIDPipe({ version: '4' })) id: string) {
     console.log({ id });
     return this.carsService.findOneByid(id);
   }

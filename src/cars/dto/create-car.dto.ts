@@ -1,10 +1,10 @@
 import { IsString } from 'class-validator';
 
 export class CreateCarDto {
-  @IsString({ message: 'Brand must be a string called brand' })
+  @IsString({ message: 'It Must be a string called brand' })
   readonly brand: string;
 
-  @IsString({ message: 'Model must be a string called model' })
+  @IsString({ message: 'It Must be a string called model' })
   readonly model: string;
 }
 
