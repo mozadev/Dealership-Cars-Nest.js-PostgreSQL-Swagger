@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Car } from './interfaces/car.interfaces';
 import { v4 as uuid } from 'uuid';
 import { CreateCarDto } from './dto/create-car.dto';
+import { UpdateCarDto } from './dto/update-car.dto';
 
 // import interface car to use it in the service, this advice us to use the same interface in the service and the controller
 @Injectable()
@@ -42,4 +43,6 @@ export class CarsService {
     this.cars.push(newCar);
     return newCar;
   }
+
+  update(id: string, updateCarDto: UpdateCarDto) {}
 }

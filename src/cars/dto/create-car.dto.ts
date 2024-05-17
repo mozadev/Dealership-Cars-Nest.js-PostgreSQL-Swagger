@@ -5,7 +5,7 @@ export class CreateCarDto {
   readonly brand: string;
 
   @IsString({ message: 'It Must be a string called model' })
-  @MinLength(3)
+  // @MinLength(3)
   readonly model: string;
 }
 
