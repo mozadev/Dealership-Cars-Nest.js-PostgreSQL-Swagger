@@ -43,5 +43,22 @@ export class CarsService {
     return newCar;
   }
 
-  update(id: string, updateCarDto: UpdateCarDto) {}
+  update(id: string, updateCarDto: UpdateCarDto) {
+    let carDB = this.findOneByid(id); // find the car by id
+
+    this.cars = this.cars.map((car) => {
+      // only update if id is the same
+      if (car.id === id) {
+        carDB = {
+          ...carDB, // get the car from the database
+          ...updateCarDto, // update the car with the new data
+          id, // keep the same id to avoid change it intentionally
+        };
+        return carDB; // return the updated car
+      }
+      return car; // if the id is different return the car without changes
+    });
+
+    return; // return the updated car
+  }
 }
