@@ -46,6 +46,13 @@ export class CarsService {
   update(id: string, updateCarDto: UpdateCarDto) {
     let carDB = this.findOneByid(id); // find the car by id
 
+    // This is not important, but it is a good practice to check if the id in the body is the same as the id in the url
+    if (updateCarDto.id && updateCarDto.id !== id) {
+      throw new NotFoundException(
+        `Car with id ${id} dont match with the id in the body ${updateCarDto.id}`,
+      );
+    }
+
     this.cars = this.cars.map((car) => {
       // only update if id is the same
       if (car.id === id) {
