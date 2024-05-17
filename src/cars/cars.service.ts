@@ -59,6 +59,6 @@ export class CarsService {
       return car; // if the id is different return the car without changes
     });
 
-    return; // return the updated car
+    return carDB; // return the updated car
   }
 }
