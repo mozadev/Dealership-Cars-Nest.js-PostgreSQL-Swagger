@@ -65,4 +65,8 @@ export class CarsService {
 
     return carDB; // return the deleted car
   }
+
+  fillCarsWithSeedData(cars: Car[]) {
+    this.cars = cars;
+  }
 }

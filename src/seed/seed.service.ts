@@ -8,6 +8,9 @@ export class SeedService {
     // CARS_SEED
     // BRANDS_SEED
 
-    return BRANDS_SEED;
+    // return CARS_SEED;
+    // return BRANDS_SEED;
+
+    return 'Seed executed successfully!';
   }
 }
