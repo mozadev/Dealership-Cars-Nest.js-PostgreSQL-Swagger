@@ -15,6 +15,6 @@ export class SeedController {
 
   @Get()
   runSeed() {
-    return this.seedService.();
+    return this.seedService.populateDB();
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SeedService {
-  populate() {
+  populateDB() {
     return 'This action adds a new seed';
   }
 }
