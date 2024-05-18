@@ -1,9 +1,21 @@
 import { Injectable } from '@nestjs/common';
+import { v4 as uuid } from 'uuid';
+
+import { Brand } from './entities/brand.entity';
+
 import { CreateBrandDto } from './dto/create-brand.dto';
 import { UpdateBrandDto } from './dto/update-brand.dto';
 
 @Injectable()
 export class BrandsService {
+  private brands: Brand[] = [
+    {
+      id: uuid(),
+      name: 'Toyota',
+      createdAt: new Date().getTime(),
+    },
+  ];
+
   create(createBrandDto: CreateBrandDto) {
     return 'This action adds a new brand';
   }
