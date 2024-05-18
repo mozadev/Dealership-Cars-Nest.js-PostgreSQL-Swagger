@@ -55,7 +55,8 @@ export class BrandsService {
     });
   }
 
-  remove(id: number) {
+  remove(id: string) {
     // return `This action removes a #${id} brand`;
+    this.brands = this.brands.filter((brand) => brand.id !== id);
   }
 }
