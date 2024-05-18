@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { CreateCarDto, UpdateCarDto } from './dto/index';
 
 // import interface car to use it in the service, this advice us to use the same interface in the service and the controller
+// TO CarsService be provider in the module, we need to add the @Injectable() decorator
 @Injectable()
 export class CarsService {
   private cars: Car[] = [
