@@ -1,8 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { CARS_SEED } from './data/cars.seed';
+import { BRANDS_SEED } from './data/brands.seed';
 
 @Injectable()
 export class SeedService {
   populateDB() {
-    return 'This action adds a new seed';
+    // CARS_SEED
+    // BRANDS_SEED
+
+    return BRANDS_SEED;
   }
 }
