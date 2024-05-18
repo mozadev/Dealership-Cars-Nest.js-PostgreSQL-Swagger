@@ -15,6 +15,7 @@ export class SeedService {
     // return CARS_SEED;
     // return BRANDS_SEED;
 
+    // here we are calling the fillCarsWithSeedData method from the CarsService to populate the database with the seed data
     this.carsService.fillCarsWithSeedData(CARS_SEED);
 
     return 'Seed executed successfully!';
