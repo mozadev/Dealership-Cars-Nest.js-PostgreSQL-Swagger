@@ -17,9 +17,4 @@ export class SeedController {
   runSeed() {
     return this.seedService.findAll();
   }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.seedService.remove(+id);
-  }
 }
