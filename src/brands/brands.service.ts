@@ -26,6 +26,8 @@ export class BrandsService {
       name: name.toLocaleLowerCase(),
       createdAt: new Date().getTime(),
     };
+    this.brands.push(newBrand);
+    return newBrand;
   }
 
   findAll() {
