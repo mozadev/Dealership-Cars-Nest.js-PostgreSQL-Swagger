@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { v4 as uuid } from 'uuid';
 
 import { Brand } from './entities/brand.entity';
@@ -24,8 +24,12 @@ export class BrandsService {
     return `This action returns all brands`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} brand`;
+  findOne(id: string) {
+    // return `This action returns a #${id} brand`;
+    const brand = this.brands.find((brand) => brand.id === id);
+    if (!brand) throw new NotFoundException(`Brand with id "${id}"not found`);
+
+    return brand;
   }
 
   update(id: number, updateBrandDto: UpdateBrandDto) {
