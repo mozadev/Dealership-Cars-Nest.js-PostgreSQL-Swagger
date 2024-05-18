@@ -58,4 +58,8 @@ export class BrandsService {
     // return `This action removes a #${id} brand`;
     this.brands = this.brands.filter((brand) => brand.id !== id);
   }
+
+  fillCarsWithSeedData(cars: Brand[]) {
+    this.brands = cars;
+  }
 }
