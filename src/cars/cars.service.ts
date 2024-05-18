@@ -25,14 +25,6 @@ export class CarsService {
       model: 'M3',
     },
   ];
-  findAll() {
-    return this.cars;
-  }
-  findOneByid(id: string) {
-    const car = this.cars.find((car) => car.id === id);
-    if (!car) throw new NotFoundException(`Car with id ${id} not found`);
-    return car;
-  }
 
   create(createCarDto: CreateCarDto) {
     const newCar: Car = {
@@ -41,6 +33,16 @@ export class CarsService {
     };
     this.cars.push(newCar);
     return newCar;
+  }
+
+  findAll() {
+    return this.cars;
+  }
+
+  findOneByid(id: string) {
+    const car = this.cars.find((car) => car.id === id);
+    if (!car) throw new NotFoundException(`Car with id ${id} not found`);
+    return car;
   }
 
   update(id: string, updateCarDto: UpdateCarDto) {
