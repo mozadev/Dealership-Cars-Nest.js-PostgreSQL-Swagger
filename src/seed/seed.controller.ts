@@ -14,7 +14,7 @@ export class SeedController {
   constructor(private readonly seedService: SeedService) {}
 
   @Get()
-  findAll() {
+  runSeed() {
     return this.seedService.findAll();
   }
 
